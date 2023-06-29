@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace RPN
 {
-    public class BoolEquasion: Equasion
+    public class BoolEquasion : Equasion
     {
-        //protected string input_string;//the input string
-        //protected Stack<string> func;//reverse polish notation of input string
-        //protected List<char> variables;//names of variables
-        //protected int number_of_variables;//number of variables in function
         public BoolEquasion(string input)
         {
             input_string = input;
@@ -36,21 +32,15 @@ namespace RPN
             Stack<char> st = new Stack<char>();
             while (index < max_length)
             {
-                if (sybls[index] == "0" || sybls[index] == "1" || (sybls[index][0] >= 'a' && sybls[index][0] <= 'z'))
+                if (sybls[index] == "0" || sybls[index] == "1" || (sybls[index][0] >= 'a' && sybls[index][0] <= 'z')|| sybls[index][0]=='_')
                 {
                     answer.Push(sybls[index]);
-                    //ShowStack(answer);
-                    //calcBoolean(answer);
-                    //ShowStack(answer);
                 }
                 else if (sybls[index] == "V")//preoryty = 4
                 {//or
                     while (st.Count > 0 && (st.Peek() == '+' || st.Peek() == '=' || st.Peek() == '>' || st.Peek() == 'V' || st.Peek() == '&' || st.Peek() == '!'))
                     {
                         answer.Push(st.Pop().ToString());
-                        //ShowStack(answer);
-                        //calcBoolean(answer);
-                        //ShowStack(answer);
                     }
                     st.Push(sybls[index][0]);
                 }
@@ -59,9 +49,6 @@ namespace RPN
                     while (st.Count > 0 && (st.Peek() == '+' || st.Peek() == '=' || st.Peek() == '>' || st.Peek() == '&' || st.Peek() == '!'))
                     {
                         answer.Push(st.Pop().ToString());
-                        //ShowStack(answer);
-                        //calcBoolean(answer);
-                        //ShowStack(answer);
                     }
                     st.Push(sybls[index][0]);
                 }
@@ -70,9 +57,6 @@ namespace RPN
                     while (st.Count > 0 && (st.Peek() == '&' || st.Peek() == '!'))
                     {
                         answer.Push(st.Pop().ToString());
-                        //ShowStack(answer);
-                        //calcBoolean(answer);
-                        //ShowStack(answer);
                     }
                     st.Push(sybls[index][0]);
                 }
@@ -81,9 +65,6 @@ namespace RPN
                     while (st.Count > 0 && st.Peek() == '!')
                     {
                         answer.Push(st.Pop().ToString());
-                        //ShowStack(answer);
-                        //calcBoolean(answer);
-                        //ShowStack(answer);
                     }
                     st.Push(sybls[index][0]);
                 }
@@ -96,9 +77,6 @@ namespace RPN
                         while (st.Peek() != '(')
                         {
                             answer.Push(st.Pop().ToString());
-                            //ShowStack(answer);
-                            //calcBoolean(answer);
-                            //ShowStack(answer);
                         }
                         st.Pop();
                     }
@@ -108,9 +86,6 @@ namespace RPN
             while (st.Count > 0)
             {
                 answer.Push(st.Pop().ToString());
-                //ShowStack(answer);
-                //calcBoolean(answer);
-                //ShowStack(answer);
             }
             return answer;
         }
@@ -131,7 +106,7 @@ namespace RPN
         /// <param name="arr"> array of concrete values of variables </param>
         /// <param name="var_names"> list of names of variables respectivly </param>
         /// <returns></returns>
-        protected string Calc(bool[] arr)
+        public string Calc(bool[] arr)
         {
             string[] temp = func.ToArray();
             Array.Reverse(temp, 0, temp.Length);
@@ -148,7 +123,7 @@ namespace RPN
                     }
                 }
             i = 0;
-            while (a.Count > 1)
+            while (a.Count > 1 && i < a.Count)
             {
                 i++;
                 if (a[i] == "&")

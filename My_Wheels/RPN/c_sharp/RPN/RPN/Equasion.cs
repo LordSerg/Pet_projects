@@ -12,6 +12,7 @@ namespace RPN
         protected Stack<string> func;//reverse polish notation of input string
         protected List<string> variables;//names of variables
         protected int number_of_variables;//number of variables in function
+        public int NumOfVariables { get { return number_of_variables; } }
         /// <summary>
         /// devides all variables, constants and operations between each other and returns them in form of array
         /// </summary>
@@ -19,7 +20,7 @@ namespace RPN
         /// <param name="num_of_vars"> return the number of variables in function </param>
         /// <param name="variables"> return names of variables, sorted from 'a' to 'z' </param>
         /// <returns></returns>
-        public string[] SplitString(string input, ref int num_of_vars, ref List<string> variables)
+        protected string[] SplitString(string input, ref int num_of_vars, ref List<string> variables)
         {
             List<string> answer = new List<string>();
             string variable_name = "";
@@ -45,18 +46,6 @@ namespace RPN
                         }
                         variable_name = "";
                         i--;
-                    }
-
-                    if (i + 1 == input.Length)
-                    {
-                        is_var_now = false;
-                        answer.Add(variable_name);
-                        if (!variables.Contains(variable_name))
-                        {
-                            num_of_vars++;
-                            variables.Add(variable_name);
-                        }
-                        variable_name = "";
                     }
                 }
                 else if ((ch >= 'a' && ch <= 'z') || ch == '_')
@@ -105,6 +94,17 @@ namespace RPN
                 else if (ch == '&') answer.Add(ch.ToString());
                 else if (ch == 'V') answer.Add(ch.ToString());
                 else if (ch == '>') answer.Add(ch.ToString());
+            }
+            if (is_var_now)
+            {
+                is_var_now = false;
+                answer.Add(variable_name);
+                if (!variables.Contains(variable_name))
+                {
+                    num_of_vars++;
+                    variables.Add(variable_name);
+                }
+                variable_name = "";
             }
             /*
             foreach (char ch in input)
