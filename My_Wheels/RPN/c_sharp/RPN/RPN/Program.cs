@@ -18,26 +18,23 @@ namespace RPN
             //Console.WriteLine(ToPostfixNotation(input));
 
             /*
-            int nnnn = 6;
-            for (int i = 0; i < (int)Math.Pow(2,nnnn); i++)
+            Equasion x = new Equasion();
+            int a = 0;
+            List<string> s = new List<string>();
+            string []qwer = x.SplitString("x_0 + x_1",ref a,ref s);
+            Console.WriteLine("Splitted list:");
+            for (int i = 0; i < qwer.Length; i++)
             {
-                for (int j = nnnn-1; j >= 0; j--)
-                {
-                    Console.Write( BTS(Convert.ToBoolean((i >> j) & (0b1)))+ " ");
-                }
-                Console.WriteLine();
+                Console.WriteLine(qwer[i]);
+            }
+            Console.WriteLine("Variables list:");
+            for (int i = 0; i < s.Count; i++)
+            {
+                Console.WriteLine(s[i]);
             }
             */
-            /*
-            Stack<string> a = new Stack<String>();
-            a.Push("1");
-            a.Push("2");
-            a.Push("3");
-            a.Push("4");
-            String[] b = a.ToArray();
-            */
 
-
+            
             Console.WriteLine("Input a math equasion to calculate, avaible operations: \n" +
                 "prior0:\t'(' or ')' - breckets" +         //+
                 "\nprior1:\t'!' - not" +                   //+
@@ -49,36 +46,28 @@ namespace RPN
             Console.Write("input:\n      ");
             string input = Console.ReadLine(); //"x&z&y";//"3 + 4 * 2 / ( 1 - 5 ) ^ 2"; //
             //Console.WriteLine(input);
+            BoolEquasion a = new BoolEquasion(input);
             Console.Write("output:\n");
-            int NumOfVariablesInFunction = 0;
-            List<char> Variables = new List<char>();
-            Stack<string> func = ToPostfixNotationBoolean(input, ref NumOfVariablesInFunction, ref Variables);
-            //ShowStack(func);
-            int k = (int)Math.Pow(2, NumOfVariablesInFunction);
-            string aRgUmEnTs = "";
-            for (int i = 0; i < NumOfVariablesInFunction; i++)
-            {
-                Console.Write(Variables[i].ToString() + "|");
-                aRgUmEnTs += Variables[i].ToString() + ", ";
-            }
-            if(aRgUmEnTs.Length>1)
-                aRgUmEnTs = aRgUmEnTs.Remove(aRgUmEnTs.Length-2,2);
-            Console.Write("   f(" + aRgUmEnTs + ")\n");
-            for (int i = 0; i < 4 + NumOfVariablesInFunction * 6; i++) Console.Write("=");
-            Console.WriteLine();
-            for (int i = 0; i < k; i++)
-            {
-                //make array
-                bool[] arr = new bool[NumOfVariablesInFunction];
-                //for (int j = 0;j<NumOfVariablesInFunction;j++)
-                for (int j = NumOfVariablesInFunction-1; j >=0 ; j--)
-                {
-                    arr[NumOfVariablesInFunction - 1 - j] = Convert.ToBoolean((i >> j) & (0b1));
-                    Console.Write(BTS(Convert.ToBoolean((i >> j) & (0b1))) + "|");
-                }
-                //calculate function for this set of arguments
-                Console.Write("     " + calcBoolean(func, arr, Variables) + "\n");
-            }
+            a.CalcForAllValues();
+            
+
+            /*
+            //boolean equasion example:
+            Console.WriteLine("Input a math equasion to calculate, avaible operations: \n" +
+                "prior0:\t'(' or ')' - breckets" +         //+
+                "\nprior1:\t'!' - not" +                   //+
+                "\nprior2:\t'&' - and" +                   //+
+                "\nprior3:\t'+' - XOR (or bitwise sum)" +  //+
+                "\nprior3:\t'=' - equivalence" +           //+
+                "\nprior3:\t'>' - implication" +           //+
+                "\nprior4:\t'V' - or");                    //+
+            Console.Write("input:\n      ");
+            string input = Console.ReadLine(); //"x&z&y";//"3 + 4 * 2 / ( 1 - 5 ) ^ 2"; //
+            //Console.WriteLine(input);
+            BoolEquasion a = new BoolEquasion(input);
+            Console.Write("output:\n");
+            a.CalcForAllValues();
+            */
 
             Console.ReadKey();
         }
