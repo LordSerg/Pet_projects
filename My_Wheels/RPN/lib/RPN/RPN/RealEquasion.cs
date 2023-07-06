@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace RPN
 {
-    
     public class RealEquasion : Equasion
     {
         public RealEquasion(string input)
@@ -99,7 +98,7 @@ namespace RPN
                 if (a[i] == "+")
                 {
                     double second = Convert.ToDouble(a[i - 1]);//second
-                    double first =  Convert.ToDouble(a[i - 2]);//first
+                    double first = Convert.ToDouble(a[i - 2]);//first
                     a.RemoveRange(i - 2, 3);
                     a.Insert(i - 2, (first + second).ToString());
                     i = 0;
@@ -151,7 +150,7 @@ namespace RPN
             string answer = "";
             string[] str = stack.ToArray();
             for (int i = str.Length - 1; i >= 0; i--)
-                answer+=(str[i] + " ");
+                answer += (str[i] + " ");
             //Console.Write(str[i] + " ");
             answer += "\n";
             return answer;

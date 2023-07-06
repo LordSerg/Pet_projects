@@ -17,6 +17,7 @@ namespace RPN
             //Console.WriteLine(input);
             Console.Write("output:\n       ");
             RealEquasion r = new RealEquasion(input);
+            Console.WriteLine(r.ToString());
             double[] arr = new double[r.NumOfVariables];
             string aRgUmEnTs = "";
             for (int i = 0; i < r.NumOfVariables; i++)

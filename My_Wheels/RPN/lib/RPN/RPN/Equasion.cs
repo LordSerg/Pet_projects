@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,15 +27,32 @@ namespace RPN
             string variable_name = "";
             string number = "";
             bool is_var_now = false;
+            int br_count=0;//brackets in variables name, for example A_((c+s)*x)
             for (int i = 0; i < input.Length; i++)
             {
                 char ch = input[i];
 
                 //variables
-                if (is_var_now)
+                if (br_count > 0)
+                {
+                    variable_name += ch;
+                    if (ch == ')')
+                    {
+                        br_count--;
+                    }
+                    else if (ch == '(')
+                        br_count++;
+
+                }
+                else if (is_var_now)
                 {
                     if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || ch == '_' || (ch >= '0' && ch <= '9'))
                         variable_name += ch;
+                    else if (ch == '(')
+                    {
+                        variable_name += ch;
+                        br_count++;
+                    }
                     else
                     {
                         is_var_now = false;
@@ -134,6 +152,49 @@ namespace RPN
             */
             variables.Sort();
             return answer.ToArray();
+        }
+        /// <summary>
+        /// Show function in nice form
+        /// </summary>
+        /// <param name="size"> maximum size of operand</param>
+        /// <returns>returns bitmap with function in nice visual form</returns>
+        public Bitmap ShowFunction(int size)
+        {
+            string[] str = func.ToArray();//reverced
+
+            draw(size, str);
+            int w = input_string.Length*size, h = 100;//???
+            Bitmap bit = new Bitmap(w,h);
+            Graphics g = Graphics.FromImage(bit);
+            g.Clear(Color.White);
+            //
+            g.DrawString(input_string,new Font("Arial",size),new SolidBrush(Color.Black),0,0);
+            return bit;
+        }
+        private void draw(int size, string[] str, int i=0)
+        {
+            if (str[i] == "+" || str[i] == "-" || str[i] == "*")
+            {
+                if (i + 1 < str.Length)
+                    draw(size, str, i + 1);
+            }
+            else if (str[i] == "/")
+            {
+
+            }
+            else if (str[i] == "^")
+            {
+
+            }
+            else// if ((str[i][0] >= 'a' && str[i][0] <= 'z') || (str[i][0] >= 'A' && str[i][0] <= 'Z') || (str[i][0] >= '0' && str[i][0] <= '9') || str[i][0] == '_')
+            {//draw an literal or variable
+                
+            }
+        }
+        private void draw_variable(string s)
+        {
+            string []str = s.Split('_');
+
         }
     }
 }

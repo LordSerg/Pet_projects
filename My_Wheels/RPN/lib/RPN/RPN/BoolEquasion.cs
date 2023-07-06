@@ -32,7 +32,7 @@ namespace RPN
             Stack<char> st = new Stack<char>();
             while (index < max_length)
             {
-                if (sybls[index] == "0" || sybls[index] == "1" || (sybls[index][0] >= 'a' && sybls[index][0] <= 'z') || (sybls[index][0] >= 'A' && sybls[index][0] <= 'Z') || sybls[index][0]=='_')
+                if (sybls[index] == "0" || sybls[index] == "1" || (sybls[index][0] >= 'a' && sybls[index][0] <= 'z') || (sybls[index][0] >= 'A' && sybls[index][0] <= 'Z') || sybls[index][0] == '_')
                 {
                     answer.Push(sybls[index]);
                 }
