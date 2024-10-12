@@ -32,4 +32,4 @@ You also have a limited ability to raise or lower the level of the stairs you ar
 
 ## Program example
 
-![video of gameplay](images/)
+![video of gameplay](images/game.gif)
