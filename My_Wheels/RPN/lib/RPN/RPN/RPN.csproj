@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoolEquasion.cs" />
+    <Compile Include="Complex.cs" />
+    <Compile Include="ComplexEquasion.cs" />
     <Compile Include="Equasion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RealEquasion.cs" />

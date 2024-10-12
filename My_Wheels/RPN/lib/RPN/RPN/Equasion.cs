@@ -9,10 +9,11 @@ namespace RPN
 {
     public class Equasion
     {
-        protected string input_string;//the input string
+        public string input_string { get; protected set; }//the input string
         protected Stack<string> func;//reverse polish notation of input string
         protected List<string> variables;//names of variables
         protected int number_of_variables;//number of variables in function
+        protected List<string> UnaryFunctions = new string[]{ "sin","Sin","cos","Cos", "tg", "ctg", "cot", "ln", "lg", "sqrt" }.ToList();//,"log","root" }.ToList();
         public int NumOfVariables { get { return number_of_variables; } }
         /// <summary>
         /// devides all variables, constants and operations between each other and returns them in form of array
@@ -31,9 +32,50 @@ namespace RPN
             for (int i = 0; i < input.Length; i++)
             {
                 char ch = input[i];
+                //unary functions
+                bool is_unary_func = false;
+                for (int t = 0; t < UnaryFunctions.Count; t++)
+                {
+                    if (i + UnaryFunctions[t].Length < input.Length)
+                    {
+                        bool flag = true;
+                        for (int k = 1; k < UnaryFunctions[t].Length; k++)
+                            if (input[i + k] != UnaryFunctions[t][k])
+                            {
+                                flag = false;
+                                break;
+                            }
+                        if ((ch == UnaryFunctions[t][0]) && flag)
+                        {
+                            answer.Add(UnaryFunctions[t].ToLower());
+                            i += (UnaryFunctions[t].Length-1);
+                            is_unary_func = true;
+                            break;
+                        }
+                    }
+                }
 
+                /*
+                if ((ch == 'S' || ch == 's') &&
+                    (i + 3 < input.Length) &&
+                    (input[i + 1] == 'i' && input[i + 2] == 'n'))
+                {//sin
+                    answer.Add("sin");
+                    i += 2;
+                }
+                else if ((ch == 'C' || ch == 'c') &&
+                    (i + 3 < input.Length) &&
+                    (input[i + 1] == 'o' && input[i + 2] == 's'))
+                {//cos
+                    answer.Add("cos");
+                    i += 2;
+                }
+                */
+                if (is_unary_func)
+                { 
+                }
                 //variables
-                if (br_count > 0)
+                else if (br_count > 0)
                 {
                     variable_name += ch;
                     if (ch == ')')
@@ -42,11 +84,10 @@ namespace RPN
                     }
                     else if (ch == '(')
                         br_count++;
-
                 }
                 else if (is_var_now)
                 {
-                    if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || ch == '_' || (ch >= '0' && ch <= '9'))
+                    if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z' && ch != 'V') || ch == '_' || (ch >= '0' && ch <= '9'))
                         variable_name += ch;
                     else if (ch == '(')
                     {
@@ -66,7 +107,7 @@ namespace RPN
                         i--;
                     }
                 }
-                else if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || ch == '_')
+                else if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z' && ch != 'V') || ch == '_')
                 {
                     is_var_now = true;
                     variable_name = ch.ToString();
@@ -93,19 +134,7 @@ namespace RPN
                 else if (ch == '*') answer.Add(ch.ToString());
                 else if (ch == '/') answer.Add(ch.ToString());
                 else if (ch == '^') answer.Add(ch.ToString());
-                //unary functions
-                else if ((ch == 'S' || ch == 's') &&
-                    (i + 3 < input.Length) &&
-                    (input[i + 1] == 'i' && input[i + 2] == 'n'))
-                {//sin
-                    answer.Add("sin");
-                }
-                else if ((ch == 'C' || ch == 'c') &&
-                    (i + 3 < input.Length) &&
-                    (input[i + 1] == 'o' && input[i + 2] == 's'))
-                {//cos
-                    answer.Add("cos");
-                }
+
                 //for logical
                 else if (ch == '=') answer.Add(ch.ToString());
                 else if (ch == '!') answer.Add(ch.ToString());
@@ -196,5 +225,14 @@ namespace RPN
             string []str = s.Split('_');
 
         }
+        public List<string> GetVariables()
+        {
+            return variables;
+        }
+        public Stack<string> GetFunctionStack()
+        {
+            return func;
+        }
+        public virtual string ToJS_function() { return ""; }
     }
 }

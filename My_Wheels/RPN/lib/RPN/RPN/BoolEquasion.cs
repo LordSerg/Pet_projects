@@ -32,7 +32,7 @@ namespace RPN
             Stack<char> st = new Stack<char>();
             while (index < max_length)
             {
-                if (sybls[index] == "0" || sybls[index] == "1" || (sybls[index][0] >= 'a' && sybls[index][0] <= 'z') || (sybls[index][0] >= 'A' && sybls[index][0] <= 'Z') || sybls[index][0] == '_')
+                if (sybls[index] == "0" || sybls[index] == "1" || (sybls[index][0] >= 'a' && sybls[index][0] <= 'z') || (sybls[index][0] >= 'A' && sybls[index][0] <= 'Z' && sybls[index][0] != 'V') || sybls[index][0] == '_')
                 {
                     answer.Push(sybls[index]);
                 }
@@ -179,7 +179,7 @@ namespace RPN
         /// <summary>
         /// outputs to console table all possible variants of variables
         /// </summary>
-        public void CalcForAllValues()
+        /*public void CalcForAllValues()
         {
             int k = (int)Math.Pow(2, number_of_variables);
             string aRgUmEnTs = "";
@@ -222,6 +222,57 @@ namespace RPN
                     Console.Write(" ");
                 Console.Write(Calc(arr) + "\n");
             }
+        }*/
+
+        public string CalcForAllValues()
+        {
+            StringBuilder ans = new StringBuilder();
+            int k = (int)Math.Pow(2, number_of_variables);
+            string aRgUmEnTs = "";
+            for (int i = 0; i < number_of_variables; i++)
+            {
+                ans.Append(variables[i].ToString() + "|");
+                aRgUmEnTs += variables[i].ToString() + ", ";
+            }
+            if (aRgUmEnTs.Length > 1)
+                aRgUmEnTs = aRgUmEnTs.Remove(aRgUmEnTs.Length - 2, 2);
+            ans.Append("   f(" + aRgUmEnTs + ")\n");
+            for (int i = 0; i < 4 + number_of_variables * 6; i++) ans.Append("=");
+            ans.Append("\n");
+            for (int i = 0; i < k; i++)
+            {
+                //make array
+                bool[] arr = new bool[number_of_variables];
+                //for (int j = 0;j<NumOfVariablesInFunction;j++)
+                for (int j = number_of_variables - 1; j >= 0; j--)
+                {
+                    arr[number_of_variables - 1 - j] = Convert.ToBoolean((i >> j) & (0b1));
+
+                    if (variables[number_of_variables - 1 - j].Length % 2 == 0)
+                    {
+                        for (int ttt = 0; ttt < variables[number_of_variables - 1 - j].Length / 2 - 1; ttt++)
+                            ans.Append(" ");
+                    }
+                    else
+                    {
+                        for (int ttt = 0; ttt < variables[number_of_variables - 1 - j].Length / 2; ttt++)
+                            ans.Append(" ");
+                    }
+                    ans.Append(BTS(Convert.ToBoolean((i >> j) & (0b1))));
+                    for (int ttt = 0; ttt < variables[number_of_variables - 1 - j].Length / 2; ttt++)
+                        ans.Append(" ");
+                    ans.Append("|");
+                }
+                //calculate function for this set of arguments
+                for (int ttt = 0; ttt < (aRgUmEnTs.Length + 6) / 2; ttt++)
+                    ans.Append(" ");
+                ans.Append(Calc(arr) + "\n");
+            }
+            return ans.ToString();
+        }
+        public override string ToJS_function()
+        {
+            return "";
         }
     }
 }
