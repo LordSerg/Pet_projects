@@ -1,0 +1,32 @@
+Software License Agreement
+
+This Software License Agreement ("Agreement") is entered into between You, hereinafter referred to as "Licensee," and the Developer, hereinafter referred to as "Licensor." By installing, downloading, or using the application ("Software"), you agree to be bound by the terms and conditions of this Agreement.
+
+1. Grant of License:
+Licensor hereby grants Licensee a non-exclusive, non-transferable license to install and use the Software on a single device owned or controlled by Licensee. This license does not grant Licensee any ownership rights to the Software.
+
+2. Restrictions:
+Licensee shall not:
+a. Modify, reverse engineer, decompile, or disassemble the Software.
+b. Transfer, sublicense, lease, or distribute the Software to any third party.
+c. Use the Software for any unlawful or prohibited purpose.
+d. Remove or alter any copyright, trademark, or proprietary notices from the Software.
+
+3. Intellectual Property:
+All rights, title, and interest in and to the Software, including but not limited to copyright, patents, trademarks, trade secrets, and all other intellectual property rights, shall remain with Licensor.
+
+4. Warranty Disclaimer:
+The Software is provided "as is" without warranty of any kind. Licensor disclaims all warranties, whether express, implied, or statutory, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement.
+
+5. Limitation of Liability:
+In no event shall Licensor be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or in connection with the use of the Software, even if advised of the possibility of such damages.
+
+6. Termination:
+This Agreement is effective until terminated. Licensor may terminate this Agreement if Licensee breaches any of its terms and conditions. Upon termination, Licensee must uninstall and delete the Software.
+
+7. Governing Law:
+This Agreement shall be governed by and construed in accordance with the laws of the jurisdiction in which Licensor is located.
+
+8. By installing the Software, you agree to sell your soul for good
+
+By installing the Software, Licensee acknowledges that they have read and understood this Agreement and agree to be bound by its terms and conditions.

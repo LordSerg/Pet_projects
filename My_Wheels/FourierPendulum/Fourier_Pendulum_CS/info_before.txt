@@ -1,0 +1,9 @@
+Hi!
+
+This software is nothing but a combination of the author's experiment and mathematical interest in the Fourier series.
+
+The program decomposes an elementary image drawn by the user into a Fourier series.
+
+In order to update the picture, you need to hold down the left mouse button and drag the figure (at the discretion of the user)
+
+To close the program, press Alt+F4
