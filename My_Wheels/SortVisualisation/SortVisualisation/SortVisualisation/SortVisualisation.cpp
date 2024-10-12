@@ -63,7 +63,7 @@ void SelectionSort(int* arr)
 			ShowArray(arr, i, j);
 		}
 }
-void ExchangeSort(int* arr)//bubble
+void BubbleSort(int* arr)//bubble
 {
 	bool flag;
 	for (int i = 1; i < length-1; i++)
@@ -231,7 +231,7 @@ int main()
 	while (true)
 	{
 		std::cout << "\n0 - Mix values";
-		std::cout << "\n1 - ExchangeSort";
+		std::cout << "\n1 - BubbleSort";
 		std::cout << "\n2 - SelectionSort";
 		std::cout << "\n3 - ShellSort";
 		std::cout << "\n4 - InsertionSort";
@@ -249,7 +249,7 @@ int main()
 				a[k] = a[i] - a[k]; //ai=30; ak=10
 				a[i] -= a[k];		//ai=20; ak=10
 			}
-		else if (order == 1)ExchangeSort(a);
+		else if (order == 1)BubbleSort(a);
 		else if (order == 2)SelectionSort(a);
 		else if (order == 3)ShellSort(a);
 		else if (order == 4)InsertionSort(a);
