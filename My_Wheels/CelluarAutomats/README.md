@@ -22,13 +22,13 @@ Other UI is intuitevly clear.
 ![video of lightning](pictures/example.gif)
 
 ## Brief explanation
-Usually the celluar automaton is an endless 2D plane with square cells on it. every cell can be either **ALIFE** or **DEAD**. (in program the light gray is for 'alife' and dark gray is for 'dead').
+Usually the celluar automaton is an endless 2D plane with square cells on it. Every cell can be either **ALIFE** or **DEAD**. (in program the light gray is for 'alife' and dark gray is for 'dead').
 
 Every step of the program every cell is asked a question:
 <p align="center">HOW MANY NEIGHBOURS DO I HAVE???</p>
 Depending on the answer the cell is making decision, weather to:
 
-- Stayin['](https://youtu.be/I_izvAbhExY?t=43)  alife
+- Stayin['](https://youtu.be/I_izvAbhExY?t=43)  alive
 - Die
 - Bron
 
