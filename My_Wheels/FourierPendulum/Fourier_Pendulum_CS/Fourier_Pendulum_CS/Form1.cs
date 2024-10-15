@@ -134,7 +134,7 @@ namespace Fourier_Pendulum_CS
         private void timer1_Tick(object sender, EventArgs e)
         {
             g.Clear(Color.White);
-            int n = fourierX.Count;//or fourierY.Count;
+            int n = (int)(fourierX.Count);//or fourierY.Count;
             if (n > 0)
             {
                 circle[] cir1 = new circle[n];
@@ -153,11 +153,12 @@ namespace Fourier_Pendulum_CS
                     //float f = fourierX[i].frequency;// + fourierY[i].frequency;
                     //float R = fourierX[i].amplitude;// + fourierY[i].amplitude;
 
-
+                    /*
                     x1 += fourierX[i].amplitude * sin(fourierX[i].frequency * t + fourierX[i].phase + Math.PI / 2);
                     y1 += fourierX[i].amplitude * cos(fourierX[i].frequency * t + fourierX[i].phase + Math.PI / 2);
-                    x2 += fourierY[i].amplitude * cos(fourierY[i].frequency * t + fourierY[i].phase + Math.PI / 2);
-                    y2 += fourierY[i].amplitude * sin(fourierY[i].frequency * t + fourierY[i].phase + Math.PI / 2);
+                    x2 += fourierY[i].amplitude * sin(fourierY[i].frequency * t + fourierY[i].phase + Math.PI / 2);
+                    y2 += fourierY[i].amplitude * cos(fourierY[i].frequency * t + fourierY[i].phase + Math.PI / 2);
+                    */
                     //x += fourierX[i].amplitude * cos(fourierX[i].frequency * t + fourierX[i].phase);//+(float)Math.PI/2);
                     //y += fourierY[i].amplitude * cos(fourierY[i].frequency * t + fourierY[i].phase);//+(float)Math.PI/2);
 
@@ -180,12 +181,14 @@ namespace Fourier_Pendulum_CS
                 //{
                 //    cir1[i].Draw(g, CircleCol);
                 //}
+                /*
                 for (int i = 0; i < n; i++)
                 {
                     if (i != n - 1 && i != n * 2 - 1)
                         cir1[i].Draw(g, Color.FromArgb(50, 50, 50, 50));
                 }
                 cir1[n - 1].Draw(g, Color.FromArgb(50, 0, 250, 0));
+                */
                 //cir1[n*2-1].Draw(g, Color.FromArgb(50, 0, 250, 0));
                 if (original.Count > 1)
                 {

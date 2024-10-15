@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33529.622
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fourier_Pendulum_CS", "Fourier_Pendulum_CS\Fourier_Pendulum_CS.csproj", "{02AAF26D-6AA3-4CD3-B770-16FB3C5D1089}"
 EndProject
@@ -13,8 +13,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{02AAF26D-6AA3-4CD3-B770-16FB3C5D1089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{02AAF26D-6AA3-4CD3-B770-16FB3C5D1089}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02AAF26D-6AA3-4CD3-B770-16FB3C5D1089}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02AAF26D-6AA3-4CD3-B770-16FB3C5D1089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02AAF26D-6AA3-4CD3-B770-16FB3C5D1089}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{02AAF26D-6AA3-4CD3-B770-16FB3C5D1089}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
