@@ -12,7 +12,7 @@ This project I've made for fun, while studying [L-systems](https://en.wikipedia.
 ## UI
 To make a lightning - hover the mouse to the begining point, hold left mouse button and drag to the second point like this:
 
-![drag](https://www.easycubes.com/wp-content/upload    s/2022/10/Click-and-Drag-Left-Button.gif)
+![drag](https://www.easycubes.com/wp-content/uploads/2022/10/Click-and-Drag-Left-Button.gif)
 
 And you'll get something like this:
 

@@ -12,7 +12,7 @@ This is a study project while I was learning basics of cyber security. The progr
 ## UI
 The program divided into two parts: the encoding one (the left side), and decoding one (the right side):
 
-![ui explanation](UI.png)
+![ui explanation](pictures/UI.png)
 
 ### Encoding
 
