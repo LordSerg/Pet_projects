@@ -30,8 +30,8 @@ Using simple math we know, that any equation of a line can be represented as a p
 
 $$
 \begin{cases}
-x = at+x_1 & \quad \text{where} a=x_2-x_1\\
-y = bt+y_1 & \quad \text{where} b=y_2-y_1
+x = at+x_1 & \quad \text{where } a=x_2-x_1\\
+y = bt+y_1 & \quad \text{where } b=y_2-y_1
 \end{cases}
 $$
 
