@@ -12,9 +12,11 @@ Project consists of to main parts:
 ### Graph construction
 There are two basic options of graph construction:
 1. vertex by vertex:
+
 ![Building graph vertex by vertex](pictures/build1.gif)
 
 2. auto generated set:
+
 ![Building graph automatically](pictures/build2.gif)
 
 in this case you can build
