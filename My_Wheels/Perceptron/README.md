@@ -7,9 +7,9 @@ Program that realises [backpropagation algorithm](https://en.wikipedia.org/wiki/
 # About project
 In this project NN teaches to solve simple boolean equation:
 
-$$x&y$$
+x&y
 
-where **x** and **y** are input of the NN and output is a logical solution of $$x&y$$.
+where **x** and **y** are input of the NN and output is a logical solution of x&y = ?
 
 After studying NN allows user to use itself for solving the problem :)
 
