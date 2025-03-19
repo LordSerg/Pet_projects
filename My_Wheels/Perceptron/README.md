@@ -1,5 +1,5 @@
 # Technology used
-C#, OOP, WindowsForms, math, algorithms
+C#, OOP, Console, math, algorithms
 
 # Overview
 Program that realises [backpropagation algorithm](https://en.wikipedia.org/wiki/Backpropagation) for simple neural network.
