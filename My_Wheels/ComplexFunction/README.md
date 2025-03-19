@@ -39,5 +39,5 @@ Finally we show our HSV color on the plane in pixel (x, y)
 
 ## Examples
 
-![Example of algorithm 1](pictures/complex.gif)
+![Example of algorithm 1](pictures/complex.png)
 
