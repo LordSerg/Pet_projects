@@ -16,6 +16,6 @@ The higher pixel - the brighter pixel.
 For beauty I also added similar mechanics to each color(RGB) separately.
 
 ## Examples
-Example of woring program (speeded up)
+Example of working program (speeded up)
 ![Example of algorithm 1](pictures/waves.gif)
 
