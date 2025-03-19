@@ -27,7 +27,7 @@ It is also possible to see explanation of this projects on [the site](https://lo
 - **NNPointsOnPlane** - comparison of different perceptron architectures in action.
 - **NNFigureRecognition** - program that can guess one of three basic shapes the user entered: circle, triangle and rectangle.
 - **ChaoticSystems** - Program that shows chaotic attractor of different differential systems, including classic ones as [Chen](https://en.wikipedia.org/wiki/Multiscroll_attractor), [Thomas](https://en.wikipedia.org/wiki/Thomas%27_cyclically_symmetric_attractor), Lorenz and other attractors.
-- **ComplexFunction** -
+- **ComplexFunction** - program that allows the user to see a parameterized function in the space of complex numbers.
 - **Kmeans** -
 - **Quaternions** -
 - **Waves** -
