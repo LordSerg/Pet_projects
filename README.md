@@ -26,6 +26,11 @@ It is also possible to see explanation of this projects on [the site](https://lo
 - **Perceptron** - realisation [backpropagation algorithm](https://en.wikipedia.org/wiki/Backpropagation) for simple neural network.
 - **NNPointsOnPlane** - comparison of different perceptron architectures in action.
 - **NNFigureRecognition** - program that can guess one of three basic shapes the user entered: circle, triangle and rectangle.
+- **ChaoticSystems** - Program that shows chaotic attractor of different differential systems, including classic ones as [Chen](https://en.wikipedia.org/wiki/Multiscroll_attractor), [Thomas](https://en.wikipedia.org/wiki/Thomas%27_cyclically_symmetric_attractor), Lorenz and other attractors.
+- **ComplexFunction** -
+- **Kmeans** -
+- **Quaternions** -
+- **Waves** -
 
 ## List of games
 - **Flatlander** - is a game where you take the role of a 2-dimensional creature that trapped in 3rd dimension. You can see the world through creature's eyes and help it exit to the top of the labirint.
