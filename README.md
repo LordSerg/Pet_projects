@@ -23,6 +23,7 @@ It is also possible to see explanation of this projects on [the site](https://lo
 - **RSA** - implementation of [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) encoding and decoding algorithm
 - **AES** - implementation of [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) encoding and decoding algorithm
 - **Classic Ciphering** - implementation of [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) and [Transposition cipher](https://en.wikipedia.org/wiki/Transposition_cipher) encoding and decoding algorithms
+- **Perceptron** - realisation [backpropagation algorithm](https://en.wikipedia.org/wiki/Backpropagation) for simple neural network.
 
 ## List of games
 - **Flatlander** - is a game where you take the role of a 2-dimensional creature that trapped in 3rd dimension. You can see the world through creature's eyes and help it exit to the top of the labirint.
